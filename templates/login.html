@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="/static/login.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
     <meta charset="UTF-8">
     <title>登录</title>
 </head>
@@ -12,21 +12,34 @@
     </div>
 </div>
 
-<div class="center">
-    <div class="center-login">
-        <form>
-            <div class="center-login-user">
-                <p>用户名：<input type="text"></p>
+<div id="login-bd" class="ops-login-bd">
+        <div class="ops-main-content">
+            <div class="ops-input-box">
+                <div class="ops-input-title">
+                    <h2>用户登录</h2>
+                </div>
+                <div class="ops-input-area">
+                    <form action="{{ url_for('login') }}" method="post">
+                        <div class="ops-input-item">
+                            <p>登录名：</p>
+                            <input type="text" name="username"  placeholder="请输入账号/邮箱" />
+                        </div>
+
+                        <div class="ops-input-item">
+                            <p>登录密码：</p>
+                            <input type="password" name="password"  placeholder="请输入密码" />
+                        </div>
+
+                        <div class="ops-login-btn">
+                            <input type="submit" value="登录">
+                        </div>
+                    </form>
+                    <p class="ops-input-other">忘记密码？<a href="#">联系我们</a></p>
+                </div>
             </div>
-            <div class="center-login-pwd">
-                <p>密码：<input type="text"></p>
-            </div>
-            <div class="center-login-btn">
-                <p><input type="submit" value="log in"></p>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+
 
 <div class="footer">
     <div class="footer-title">

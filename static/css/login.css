@@ -1,0 +1,105 @@
+.header {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    line-height: 200px;
+    background-color: cyan;
+}
+.header-title{
+    float: left;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+}
+.ops-login-bd{
+    margin-bottom: 38px;
+    height:529px;
+    background: #00a2ca;
+}
+.ops-login-bd .ops-main-content{
+    position: relative;
+    height:100%;
+    background: no-repeat;
+}
+.ops-login-bd .ops-input-box{
+    position: absolute;
+    right: 80px;
+    top:50%;
+    margin-top:-200px;
+    background:#fff;
+    box-shadow: 2px 2px 3px #696363,-2px 0 3px #696363;
+}
+.ops-login-bd .ops-input-box .ops-input-title{
+    margin-top:22px;
+    padding:0 10px;
+    border-left:4px solid #fc880c;
+    font-size:22px;
+    color:#000;
+}
+.ops-login-bd .ops-input-box .ops-input-title h2{
+    padding-bottom:8px;
+    border-bottom:1px solid #d9d9d9;
+    font-size: 20px;
+}
+
+.ops-login-bd .ops-input-box .ops-input-area{
+    padding:0 22px;
+    padding-top:20px;
+}
+.ops-login-bd .ops-input-box .ops-input-area .ops-input-item{
+    margin-bottom:15px;
+}
+.ops-login-bd .ops-input-box .ops-input-area .ops-input-item p{
+    margin-bottom:5px;
+    font-size:12px;
+    font-weight:bold;
+}
+.ops-login-bd .ops-input-box .ops-input-area input{
+    padding:0 10px;
+    border:1px solid #cacaca;
+    width:264px;
+    height:32px;
+    outline:none;
+    border-radius: 3px;
+}
+.ops-login-bd .ops-input-box .ops-input-area .ops-img-code{
+    float:left;
+    width:160px;
+    margin-right:5px;
+    border-radius: 3px;
+}
+.ops-login-bd .ops-input-box .ops-input-area .ops-login-btn{
+    display:block;
+    width:100%;
+    height:36px;
+    line-height: 36px;
+    text-align:center;
+}
+.ops-login-bd .ops-input-box .ops-input-other{
+    padding:22px;
+    text-align:right;
+}
+
+.ops-login-bd .ops-input-box .ops-input-other a{
+    margin-left:10px;
+}
+.footer {
+    background-color: cyan;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    line-height: 200px;
+}
+.footer-title{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+}
