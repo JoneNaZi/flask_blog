@@ -1,11 +1,14 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, request
+from models import User
+profile = Blueprint('profile', __name__)
 
-app = Flask(__name__)
 
-
-@app.route('/login', methods=['GET', 'POST'])
+@profile.route('/')
+@profile.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        da = User.query.all()
+        print(da)
         username = request.form['username']
         password = request.form['password']
         if username == 'dengzhi' and password == 'dengzhi':
@@ -13,10 +16,6 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/')
+@profile.route('/index')
 def index():
     return render_template('index.html')
-
-
-if __name__ == '__main__':
-    app.run()
