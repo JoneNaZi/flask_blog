@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/app/static/css/login.css">
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<div class="header">
+    <div class="header-title">
+        XXX登录系统
+    </div>
+</div>
+
+<div id="login-bd" class="ops-login-bd">
+        <div class="ops-main-content">
+            <div class="ops-input-box">
+                <div class="ops-input-title">
+                    <h2>用户登录</h2>
+                </div>
+                <div class="ops-input-area">
+                    <form action="{{ url_for('login') }}" method="post">
+                        <div class="ops-input-item">
+                            <p>登录名：</p>
+                            <input type="text" name="username"  placeholder="请输入账号/邮箱" />
+                        </div>
+
+                        <div class="ops-input-item">
+                            <p>登录密码：</p>
+                            <input type="password" name="password"  placeholder="请输入密码" />
+                        </div>
+
+                        <div class="ops-login-btn">
+                            <input type="submit" value="登录">
+                        </div>
+                    </form>
+                    <p class="ops-input-other">忘记密码？<a href="#">联系我们</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="footer">
+    <div class="footer-title">
+        关于我们
+    </div>
+</div>
+
+</body>
+</html>
