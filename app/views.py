@@ -3,7 +3,7 @@ from models import User
 profile = Blueprint('profile', __name__)
 
 
-@profile.route('/')
+# @profile.route('/')
 @profile.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
