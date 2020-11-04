@@ -1,5 +1,5 @@
-from flask_wtf import Form
-from wtforms import StringField, PasswordField
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length
 """
 字段类型      说　　明
@@ -36,9 +36,15 @@ NoneOf 确保输入值不在可选值列表中
 """
 
 
-class LoginForm(Form):
-    username = StringField(Label='用户名',
+class LoginForm(FlaskForm):
+    username = StringField(label='用户名',
                            validators=[DataRequired('用户名必填'),
-                                       Length(min=6, max=20, message='长度介于6-20之间')])
+                                       Length(min=6, max=20, message='长度介于6-20之间')],
+                           render_kw='用户名长度介于6-20之间')
 
-    password = PasswordField(validators=[DataRequired()])
+    password = PasswordField(label='密码',
+                             validators=[DataRequired('密码必填'),
+                                         Length(min=6, message='密码长度需大于6')],
+                             render_kw='密码长度需大于6')
+
+    submit = SubmitField(label='登录')

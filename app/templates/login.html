@@ -20,19 +20,29 @@
                 </div>
                 <div class="ops-input-area">
                     <form action="{{ url_for('profile.login') }}" method="post">
+                        {{ form.hidden_tag() }}
                         <div class="ops-input-item">
                             <p>登录名：</p>
                             <input type="text" name="username"  placeholder="请输入账号/邮箱" />
+                            {% for error_username in form.username.errors %}
+                                <span>{{ error_username }}</span>
+                            {% endfor %}
                         </div>
 
                         <div class="ops-input-item">
                             <p>登录密码：</p>
                             <input type="password" name="password"  placeholder="请输入密码" />
+                            {% for error_password in form.password.errors %}
+                                <span>{{ error_password }}</span>
+                            {% endfor %}
                         </div>
 
                         <div class="ops-login-btn">
                             <input type="submit" value="登录">
                         </div>
+                        {% for message in get_flashed_messages() %}
+                            <span>{{ message }}</span>
+                        {% endfor %}
                     </form>
                     <p class="ops-input-other">忘记密码？<a href="#">联系我们</a></p>
                 </div>

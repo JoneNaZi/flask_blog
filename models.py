@@ -7,4 +7,10 @@ class User(db.Model):
     password = db.Column(db.String(36))
 
 
+class Directory(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64))
+    content = db.Column(db.String(256))
+
+
 # db.create_all()
