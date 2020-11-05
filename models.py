@@ -13,4 +13,4 @@ class Directory(db.Model):
     content = db.Column(db.String(256))
 
 
-# db.create_all()
+db.create_all()

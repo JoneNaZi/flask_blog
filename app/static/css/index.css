@@ -256,8 +256,15 @@ body{
     height: 500px;
     float: left;
 }
-.content-left p{
+.content-area{
+    list-style-type: none;
     text-align: left;
+}
+.blog_title{
+    font-weight: bold;
+    font-size: 28px;
+}
+.blog_content{
     text-indent: 32px;
 }
 
