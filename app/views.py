@@ -10,12 +10,8 @@ from models import User, Directory
 def login():
     loginform = LoginForm()
     if loginform.validate_on_submit():
-        wander_list = []
         username = loginform.username.data
         password = loginform.password.data
-        directory_list = Directory.query.all()
-        print(directory_list)
-        print([i.title for i in directory_list])
         user = User.query.filter(and_(User.username == username, User.password == password)).first()
         if user is not None:
             return redirect(url_for('profile.index'))

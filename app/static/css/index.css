@@ -312,3 +312,7 @@ body{
     background-color:#dfeef9;
     color:#666666;
 }
+.footer p{
+    margin: 0;
+    padding-top: 10px;
+}
