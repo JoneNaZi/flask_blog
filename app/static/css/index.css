@@ -262,10 +262,21 @@ body{
 }
 .blog_title{
     font-weight: bold;
-    font-size: 28px;
+    overflow: hidden;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.blog_title a{
+    text-decoration: none;
+    color: black;
 }
 .blog_content{
     text-indent: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #8a8a8a;
 }
 
 .content-right{
