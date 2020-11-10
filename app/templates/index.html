@@ -1,60 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
-    <meta charset="UTF-8">
-    <title>首页</title>
-</head>
-<body>
-<div class="header">
-    <h1>个人<span class="orange">博客</span></h1>
-</div>
+{% extends "base.html" %}
 
-
-
-
-<div class="navigation">
-    <ul>
-        <li><a href="index.html" class="selected">博客首页</a></li>
-        <li><a href="#">关于我</a></li>
-        <li><a href="#">给我留言</a></li>
-        <li><a href="#">友情链接</a></li>
-        <li><a href="#">我的信箱</a></li>
-        <li><a href="#">社区</a></li>
-    </ul>
-</div>
-
-<div class="content">
+{% block content_left %}
     <div class="content-left">
         {% for directory_obj in directory_obj_list %}
             <ul class="content-area">
-                <li class="blog_title"><a href="#">{{ directory_obj.title }}</a></li>
+                <li class="blog_title"><a href="{{ url_for('profile.detail', directory_id=directory_obj.id) }}">{{ directory_obj.title }}</a></li>
                 <li class="blog_content">{{ directory_obj.content }}</li>
             </ul>
         {% endfor %}
     </div>
-    <div class="content-right">
-        <div class="write">
-            <img src="../static/image/write.png" alt="write"/><a href="#">写博客</a>
-        </div>
-        <ul>
-            <li><a href="#" class="selected">日志 </a> </li>
-            <li><a href="#">相册 </a></li>
-            <li><a href="#">个人档案 </a></li>
-            <li><a href="#">分享 </a></li>
-            <li><a href="#">音乐地带 </a></li>
-            <li><a href="#">视频 </a></li>
-            <li><a href="#">更多 </a></li>
-        </ul>
-    </div>
-</div>
-<div class="footer">
-    <p>版权所有</p>
-    <hr />
-    <small>法律条文</small>
-    <small>联系我们</small>
-    <small>客户意见</small>
-    <small>商户合作</small>
-</div>
-</body>
-</html>
+{% endblock %}

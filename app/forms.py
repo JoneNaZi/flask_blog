@@ -48,3 +48,9 @@ class LoginForm(FlaskForm):
                              render_kw='密码长度需大于6')
 
     submit = SubmitField(label='登录')
+
+
+class AddForm(FlaskForm):
+    title = StringField(label='标题', validators=[DataRequired()])
+
+    content = StringField(label='内容', validators=[DataRequired()])

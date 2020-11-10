@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<div class="header">
+    <h1>个人<span class="orange">博客</span></h1>
+</div>
+
+
+
+
+<div class="navigation">
+    <ul>
+        <li><a href="{{ url_for('profile.index') }}" class="selected">博客首页</a></li>
+        <li><a href="#">关于我</a></li>
+        <li><a href="#">给我留言</a></li>
+        <li><a href="#">友情链接</a></li>
+        <li><a href="#">我的信箱</a></li>
+        <li><a href="#">社区</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    {% block content_left %}
+    {% endblock %}
+    <div class="content-right">
+        <div class="write">
+            <a href="{{ url_for('profile.add_blog') }}"><img src="../static/image/write.png" alt="write"/>写博客</a>
+        </div>
+        <ul>
+            <li><a href="#" class="selected">日志 </a> </li>
+            <li><a href="#">相册 </a></li>
+            <li><a href="#">个人档案 </a></li>
+            <li><a href="#">分享 </a></li>
+            <li><a href="#">音乐地带 </a></li>
+            <li><a href="#">视频 </a></li>
+            <li><a href="#">更多 </a></li>
+        </ul>
+    </div>
+</div>
+<div class="footer">
+    <p>版权所有</p>
+    <hr />
+    <small>法律条文</small>
+    <small>联系我们</small>
+    <small>客户意见</small>
+    <small>商户合作</small>
+</div>
+</body>
+</html>

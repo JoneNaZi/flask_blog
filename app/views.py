@@ -1,8 +1,9 @@
 from flask import render_template, redirect, url_for, flash
 from sqlalchemy import and_
 from . import profile
-from .forms import LoginForm
+from .forms import LoginForm, AddForm
 from models import User, Directory
+from run import db
 
 
 # @profile.route('/')
@@ -25,3 +26,20 @@ def login():
 def index():
     directory_obj_list = Directory.query.all()
     return render_template('index.html', directory_obj_list=directory_obj_list)
+
+
+@profile.route('/detail/<directory_id>')
+def detail(directory_id):
+    directory = Directory.query.filter(Directory.id == directory_id).first()
+    return render_template('detail.html', directory=directory)
+
+
+@profile.route('/add_blog', methods=['GET', 'POST'])
+def add_blog():
+    add_form = AddForm()
+    title = add_form.title.data
+    content = add_form.content.data
+    if add_form.validate_on_submit():
+        db.session.add(Directory(title=title, content=content))
+        return redirect(url_for('profile.index'))
+    return render_template('add_blog.html', form=add_form)
